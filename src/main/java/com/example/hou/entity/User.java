@@ -15,33 +15,17 @@ import lombok.experimental.Accessors;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName(value = "user")
+//只是用作临时登录   数据库无表  类
 public  class User {
-
     private static final long serialVersionUID = 1L;
-
     /**
-     * 用户主键 这里为了简便即身份证
+     * 用户主键
      */
-
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
-    private String sfz;
-
     private String name;
-
-    private String sex;
-
-    private Integer age;
-
-    private String phonenum;
-
     private String password;
-
     /**
      * 管理员权限
      */
     private Integer access;
-
 
 }

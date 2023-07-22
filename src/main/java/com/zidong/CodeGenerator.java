@@ -59,10 +59,10 @@ public class CodeGenerator {
         // 数据源配置
         //注意修改数据库的名字
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/flight?useUnicode=true & characterEncoding=utf-8 & allowPublicKeyRetrieval=true&useSSL=false & serverTimezone=UTC");
+        dsc.setUrl("jdbc:mysql://47.110.83.104:3306/house?useUnicode=true & characterEncoding=utf-8 & allowPublicKeyRetrieval=true&useSSL=false & serverTimezone=UTC");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("123456");
+        dsc.setPassword("123abc");
         mpg.setDataSource(dsc);
 
         // 包配置

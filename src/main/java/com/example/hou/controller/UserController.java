@@ -12,32 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
-
 /*
-测试接口
-登录
-localhost:8080/user/login
-{
-    "sfz":"157347196610093469",
-    "password":"123"
-}
-
-注册
-localhost:8080/user/register
-{
-    "sfz":"157347196610093469",
-    "password":"123"
-}
-
-更新
-localhost:8080/user/update
-{
-    "sfz":"123456789012345677",
-    "password":"123Q!1234",
-    "phonenum":"15757106037",
-    "name":"张三"
-}
-
 获得用户信息
 localhost:8080/user/get
 {
@@ -46,7 +21,7 @@ localhost:8080/user/get
 
  */
 
-
+//临时搞一个静态传参方法  tutu   好玩
 
 
 @Slf4j
@@ -96,6 +71,27 @@ public class UserController {
             return ResultUtil.error("获取失败");
         }
     }
+
+
+    @RequestMapping(value="/tutu" , produces={"application/json;charset=UTF-8"})  //用于支持中文json输出
+    public Result tempshow() {
+            //相当于重新打开了ResultUtil的封装  自定义返回消息也在返回类的属性位置编辑
+            Result r=new Result();
+            r.setCode(200);
+            r.setMsg("成功连接到猪猪的心~");
+            r.setData("hi~ 兔兔随时可以在这里找到我 -- 2023.7.10  wxj ");
+            return r;
+        }
+    @RequestMapping(value="/zxy" , produces={"application/json;charset=UTF-8"})
+    public Result tempshow22() {
+        //相当于重新打开了ResultUtil的封装  自定义返回消息也在返回类的属性位置编辑
+        Result r=new Result();
+        r.setCode(200);
+        r.setMsg("服务器测试");
+        r.setData("hi~ 小妍  金榜题名 加油  :)   ur sincerely  wxj ");
+        return r;
+    }
+
 
 }
 

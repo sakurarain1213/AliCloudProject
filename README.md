@@ -1,128 +1,33 @@
 
-数据库系统的课程项目（后端）
+云端测试项目（后端）
 ========================
-（历时一天零**半个月**搞得差不多了）
-# Introduction - 介绍： 机票查询与预定项目
-
-***
-ECNU-SEI  2023年春  DB  宫学庆教授
-***
 
 在cmd中     tree 项目硬盘地址 /f > 树状图输出地址result.txt   即可
-DBproj  主要目录结构和介绍
-
-```
-│  pom.xml     在这里管理依赖仓库
-│  README.md
-│
-├─src
-│  ├─main
-│  │  ├─java
-│  │  │  └─com
-│  │  │      ├─example
-│  │  │      │  └─hou
-│  │  │      │      │  HouApplication.java      启动类
-│  │  │      │      │      
-│  │  │      │      ├─controller                    前端交互第一层接口
-│  │  │      │      │      AirportController.java
-│  │  │      │      │      BookController.java
-│  │  │      │      │      FlightController.java
-│  │  │      │      │      UserController.java
-│  │  │      │      │      UserInfoController.java
-│  │  │      │      │      
-│  │  │      │      ├─entity                          实体类 静态DB表类
-│  │  │      │      │      Airport.java
-│  │  │      │      │      Book.java
-│  │  │      │      │      ExampleRecord.java
-│  │  │      │      │      Flight.java
-│  │  │      │      │      User.java
-│  │  │      │      │      
-│  │  │      │      ├─mapper                         形参mapper 可以不写
-│  │  │      │      │      AirportMapper.java
-│  │  │      │      │      BookMapper.java
-│  │  │      │      │      FlightMapper.java
-│  │  │      │      │      UserInfoMapper.java
-│  │  │      │      │      UserMapper.java
-│  │  │      │      │      
-│  │  │      │      ├─result                         返回模板类
-│  │  │      │      │      Result.java
-│  │  │      │      │      ResultCode.java
-│  │  │      │      │      ResultUtil.java
-│  │  │      │      │      
-│  │  │      │      └─service                         第二层接口类
-│  │  │      │          │  AirportService.java
-│  │  │      │          │  BookService.java
-│  │  │      │          │  FlightService.java
-│  │  │      │          │  RecordService.java
-│  │  │      │          │  UserService.java
-│  │  │      │          │  
-│  │  │      │          └─impl                        末端具体实现类
-│  │  │      │                  AirportServiceImpl.java
-│  │  │      │                  BookServiceImpl.java
-│  │  │      │                  CheckPassword.java
-│  │  │      │                  FlightServiceImpl.java
-│  │  │      │                  IdCardNumberUtils.java
-│  │  │      │                  UserInfoServiceImpl.java
-│  │  │      │                  UserServiceImpl.java
-│  │  │              
-│  │  └─resources
-│  │      │  application.yml       统一配置文件
-│  │      │  
-│  │      ├─mapper
-│  │      │      UserMapper.xml     自定义SQL文件
-│  │      │      
-│  │      ├─static
-│  │      └─templates
-│  └─test                            测试类
-│      └─java
-│          └─com
-│              └─example
-│                  └─hou
-│                          HouApplicationTests.java
-│
-```
 
 ## 技术栈
 
-- 编程语言：Java
-- 构建工具：IDEA
-- 后端框架：Springboot
-- 插件支持：MybatisPlus
-- 数据库：Mysql
-- 数据库可视化工具：Navicat
-- 接口测试：Postman
+- Springboot
+- MybatisPlus
+- Nginx + PHP + MySQL（LNMP）
+- 服务器供应商：阿里云ECS
 
 
 `~写表过程：entity层 service层(impl实现层)  （mapper层可不写）  controller层   测试`
-Features - 特性
-Requirements - 必要条件（环境，模块描述）  
-Installation - 安装
-Usage - 用法
-ez   O(∩_∩)O
+
 # Configuration - 配置（配置信息。）
-- 部署：IDEA打开项目文件，添加spring框架支持，进入maven配置文件pom.xml 点击蓝色更新图标 会自动下载maven依赖
-- 在application.yml配置文件里更改本地数据库连接 启动Application.java即可  
-- 项目检查和运行前所需的sql建表命令 见flight.sql（大数据集）和flight_temp.sql(样例数据集)
-- 项目检查需要的sql语句和结果见picture文件夹下的截图
-- 上面只是一些样例截图，实际需要的url和功能在controller文件夹下每个java文件的注释中查看
+- 面板配置
+- Nginx 1.22.1
+- MySQL 8.0.24
+- PHP-7.4.33
+- phpMyAdmin 5.0
 
 
-# Development - 开发（关于开发的文档信息（API 等））
-### Changelog - 更新日志（一个简短的历史记录（更改，替换或者其他。）  
-尝试后端优化：
-- [ ] *部署到服务器--没得报销2333*<br />
-- [x] *购票的并发问题 可以优化  一开始只要显示有票航班 而且还要保证点进去也可能没票 okk*<br />
-- [x] *选票订票功能okk+表增加列status表示订单状态：乘坐与否或过期*<br />
-- [ ] *选座功能*<br />
+### Changelog - 更新日志
+- [x] *部署到服务器--没得报销2333*<br />
 - [ ] *头像文件等*<br />
 - [ ] *评价系统和排序规则优化*<br />
-- [x] *退改签功能okk*<br />
-- [x] *我的订票历史查询okk*<br />
 - [ ] *钱包和支付系统——使用机票票价——多乘客订票的改进*<br />
-- [x] *sql执行时间显示与优化okkk*<br />
 - [ ] *简单分页查询*
-- [x] *低价机票推荐 和热门购票地点推荐*
-- [x] *从订票记录看 既要时间又要航班信息  多表联查的返回值问题 要么嵌套list，要么新建一个整合元素的类，要么java.util.Map  要么注册复合entity类*
 - [ ] Redis缓存token时效
 - [ ] 邮箱注册验证模块
 - [ ] 静态资源访问
@@ -132,22 +37,13 @@ ez   O(∩_∩)O
 - [ ] 热部署的实现
 - [ ] 持久层的优化
 - [ ] security安全框架和数据库认证
-修复了购票结束后票价归零的问题
-修复了订票记录显示航班地点为数字的问题
-修复了订票记录没有航班信息的问题
-前端连带debug
-为了保证数据量  生成了百万级别的随机数据集
-Insert into Table2(field1,field2,...) select value1,value2,... from Table1 on duplicate key update Table1.id = Table2.id
-可以保证不断合并过程中避免主键冲突
-github推送被拒 因为单个文件有 ~120MB 的限制  不要上传过大的sql文件
+
 IDEA的本地提交回滚策略：左下角git  选择本地某个记录 右键回滚  一定注意选择mixed选项  保留源码修改  只取消了本地提交
 ### FAQ - 常见问题（常见问题）  
 
 
-
 ### 云服务器部署过程：
-- 阿里云+xshell+Xftp（可视化）+navicat（本地连接云端数据库） +宝塔面板自动部署软件
-
+阿里云+xshell+Xftp（可视化）+navicat（本地连接云端数据库） +宝塔面板自动部署软件
 实例ID：i-bp1h0hhvaxtlel9fsv63
 47.110.83.104  (公)
 172.28.49.119  (私有)
@@ -161,11 +57,8 @@ porn.xml文件添加
 四  在一键部署里 设置/usr/java/jdk1.8.0_371/bin/java
 47.110.83.104
  --server.port=8080   要加空格
-
 五   阿里云安全组  入方向 要开各种端口  包括8080    宝塔也要对应开启入端口
-
 FIN ！
-
     有问题问上帝lol
 ```(可以加编程语言名)
 System.out.println("hello world");

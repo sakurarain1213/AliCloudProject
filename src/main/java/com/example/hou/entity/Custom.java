@@ -1,8 +1,6 @@
 package com.example.hou.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
-
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.Version;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -14,33 +12,41 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author hsin
+ * @since 2023-07-22
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName(value = "book")
-public  class Book {
+@TableName(value = "custom")
+public class Custom{
 
     private static final long serialVersionUID = 1L;
 
-    private String ordernum;
+    /**
+     * 主键
+     */
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
-    @TableId(value = "userId")
-    private String userId;
+    /**
+     * 姓名
+     */
+    private String name;
 
-    @TableId(value = "flightId")
-    private String flightId;
+    /**
+     * 联系方式
+     */
+    private String phone;
 
-    private Date date;
-
-    private Integer seatnum;
-
-    private String service;
-
-    /*
-    订单状态  暂时用string描述
-    支付  已乘坐 未乘坐过期等等
-
-    */
-    private String status;
+    /**
+     * 备注
+     */
+    private String note;
 
 }
