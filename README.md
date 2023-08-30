@@ -17,7 +17,7 @@
 # Configuration - 配置（配置信息。）
 - 面板配置
 - Nginx 1.22.1
-- MySQL 8.0.24
+- MySQL 8.0.24     5.7?
 - PHP-7.4.33
 - phpMyAdmin 5.0
 

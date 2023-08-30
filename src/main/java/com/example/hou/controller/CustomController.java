@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 localhost:8080/user/get
 {
     "sfz":"123456789012345677"
+
+
 }
 
  */
 
-//临时搞一个静态传参方法  tutu   好玩
 
 
 @Slf4j

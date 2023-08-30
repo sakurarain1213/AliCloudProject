@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /*
 获得用户信息
-localhost:8080/user/get
+localhost:8080/user/login
 {
-    "sfz":"123456789012345677"
+    "name":"xjfc",
+    "password":"123abc"
 }
 
  */
 
-//临时搞一个静态传参方法  tutu   好玩
 
 
 @Slf4j
@@ -41,7 +41,8 @@ public class UserController {
         }
     }
 
-
+//后面都用不到
+    /*
     @RequestMapping("/register")
     public Result register(@RequestBody User user) {
         String msg = userService.registerService(user);
@@ -91,7 +92,7 @@ public class UserController {
         r.setData("hi~ 小妍  金榜题名 加油  :)   ur sincerely  wxj ");
         return r;
     }
-
+*/
 
 }
 

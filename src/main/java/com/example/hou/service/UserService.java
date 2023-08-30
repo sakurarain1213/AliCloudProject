@@ -15,10 +15,10 @@ public interface UserService {
 
     public String loginService(User user);
 
-    public String registerService(User user);
+   // public String registerService(User user);
 
-    public String updateService(User user);
+   // public String updateService(User user);
 
-    public User getService(User user);
+  //  public User getService(User user);
 
 }

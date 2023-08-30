@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
 import java.io.UnsupportedEncodingException;
-
+import java.util.Objects;
 
 
 /**
@@ -20,54 +20,23 @@ import java.io.UnsupportedEncodingException;
  * @author hsin
  * @since 2023-05-17
  */
-/*
+
 @Service
 public class UserServiceImpl  implements UserService {
 
     @Autowired
     UserMapper userMapper;
 
-    public User getService(User user){
-        User userE = userMapper.searchBySfz(user.getSfz());
-        if (userE != null) {
-                return userE;
-            } else {
-                return null;
-            }
-
-    }
-
     @Override
     public String loginService(User user) {
-
-        User userE = userMapper.searchBySfz(user.getSfz());
-        if (userE != null) {
-            if (userE.getPassword().equals((user.getPassword()))) {
+        //静态登录  只有一个数据
+            if (user.getName().equals("xjfc") && user.getPassword().equals("123abc") ) {
                 return "SUCCESS";
             } else {
-                return "密码错误";
+                return "账号或密码错误";
             }
-        }
-        return "此用户不存在";
     }
 
-    /*
-    用string版本    作为参考
-        @Override
-        public String loginService(String username,String password) {
-            UserInfo userInfo = userInfoMapper.searchByUsername(username);
-            if (userInfo != null) {
-                if (password.equals(userInfo.getPassword())) {
-                    return "SUCCESS";
-                } else {
-                    return "密码错误";
-                }
-            }
-            return "此用户不存在";
-        }
 
 
-
-
-//}
-        */
+}
