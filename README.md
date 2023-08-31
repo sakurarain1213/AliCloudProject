@@ -3,7 +3,7 @@
 ========================
 
 在cmd中     tree 项目硬盘地址 /f > 树状图输出地址result.txt   即可
-
+tree C:\Users\w1625\Desktop\双创\hou_fin /f > C:\Users\w1625\Desktop\result.txt   即可
 ## 技术栈
 
 - Springboot
@@ -55,6 +55,7 @@ porn.xml文件添加
 二 mysql云端数据库报  java.sql.SQLException: null, message from server: "Host '*.*.*.*' is not allowed to connect  要在服务器命令行添加mysql的root权限
 三 宝塔面板的配置： mysql要8.0   nginx要1.22  PHP要7.4   phpmyadmin要5.0  java一键部署要3.5
 四  在一键部署里 设置/usr/java/jdk1.8.0_371/bin/java
+注意要在安全里关闭防火墙
 47.110.83.104
  --server.port=8080   要加空格
 五   阿里云安全组  入方向 要开各种端口  包括8080    宝塔也要对应开启入端口
